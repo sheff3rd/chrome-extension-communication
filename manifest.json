@@ -1,0 +1,12 @@
+{
+  "name": "Secure Communication",
+  "version": "1.0.0",
+  "description": "Send post messages securely",
+  "manifest_version": 3,
+  "author": "Oleksandr Ovcharov",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Secure Communication"
+  },
+  "permissions": ["scripting", "activeTab"]
+}

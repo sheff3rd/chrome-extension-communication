@@ -1,0 +1,19 @@
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+const port = 3000;
+
+const privateKey =
+  process.env.EXTENSION_PRIVATE_KEY ||
+  `MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDlcc3B9EIWDzr0anK9d7P6D79o2FJJZxN1sWOMclEXGZxxDQb9ev9X76ynCjVXKIQC/FIYqxBtadYv/DwuqTOe1sCt25zyg/aB5X5L+T0g3Epv+qUm1q3HNvQhSk2jEoHWYKE81SVAaXEpVWDsuY04DSMwcTPMxut1P4RNz3bFGcc3bpTCdgDtrYW5auwm+YFu2lOrq3C1KphKxUuhQHiGcuRYJBY/K7UH3R5pucZCOowYlGNzzUEBRaxQSVRCpDaVEZvn3c4s459D5oRm70Z+r/EaPIbneACKZiMB1p4RHYDJ8Ov90s31YRDgBA8KGUK2tHQX9tLoCC9Mg+BSnhnJAgMBAAECggEAAeRd69Qjjq2e3YhrL+SedgVZqI4y5cZ+3n+W2iFhSaIshTdbEWaoFOn+L8skc+XkgMsw6tDl9xXiV+70/PY2UoBjugW8HmAF8ovAdAAbSpeOzkfZ5J9QwRu3Kev75PT4zwmVehrbr96jmIOTSrElt397MVPa3kfz6fxjUfV3DmW3w5UDalKXl+omJ3g1PLHUfcPcSH2nqyAbLfkowHSVWi3rv9+r7YQC0u57c1dcWtT45jaqyEA5MINZT4TW5u1ArRqiYRyaYAus2sHZjPILpHACuVdibhrB8GXmpR39HhXoqI3/l31Lyi/OjF9d2euHoq38gzKf5FHEEi/SpWgZqQKBgQD1RnNvhpWWkVpDWwq1JNDstvMZYSJANzFHHrPbazQzXH0+gGyUhBwhjAUK4USLPxx84oOVDYK3fJxJD3/NKtStUoc424AtyVZqacpemjxypVvYF2XXZOonN8E2CBX7RJdoFBbUxpvzpauZuxsXfP5T/ZmybUOUIHdSjsI32ZeM1wKBgQDveiYBbJoE6kRGQai/FjUJEV4Uw8oSV3GdNrMZBz2gFMLaK3F+iDgnHiJowfzZwIrjkGVvOefSM01eb0L23yQ00JqyLByKifVnhIL6gJBHSJWI8duc+BXMdZvIFK3oFm2Qr2dDnVvFggdqiYm15tLFZFk2qf8t0KAKm92aTCUaXwKBgQDMxQZ2o4ubarpK5WUpGhV6qrqGA7wOlIWFdLJ/ix7Hin3dgmYkD69UqotDLBKHlib4dDuaYu8wtM3diR0PcqSgFvhhlY+Lqj2FFdEn7ehtZnQpEk+p5cw+9aNOsq13Wyp0b+EnvrBQV43OCJFzqJzEDkMU3Xe/4OL9f8XRzs1hfQKBgC+o/LVd2s1NnmbpHF9jWQzD8xho2ueJlaf3Qe+iPEaGuzzWVpEbJSnL2odEzEC+DCY8D6PyP0vbP/Oiaw5c3ITSW2dIVinQSRHgEn0uZwh4zqHhmJaF3TjC000fqHi/NfEMp52STLhjJ3yxgMG9/YahcQvrC0kf8yoJWTIjI2M7AoGAClOHhquQic5197vXUWRhBPYoAslMjiZEd0xs/retjEcLsePZrRhPmMWSM3Z0P1QjJnyYLgvXfq60iDu9FGnj4rADK0haWbKGNQFiYDBdr8MIw/S0B3vBOFTC3OpNrIABfkBJoDIDfhthepJlLCi3KGJDT0tCYJxK1qDE611X6qc=`;
+
+app.use(cors());
+
+app.get("/api/privateKey", (_req, res) => {
+  res.json({ privateKey });
+});
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
